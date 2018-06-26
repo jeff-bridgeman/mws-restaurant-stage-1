@@ -10,6 +10,7 @@ var markers = []
 document.addEventListener('DOMContentLoaded', (event) => {
   fetchNeighborhoods();
   fetchCuisines();
+  registerServiceWorker();
 });
 
 /**
@@ -25,7 +26,15 @@ fetchNeighborhoods = () => {
     }
   });
 }
+registerServiceWorker = () =>{
+  if (!navigator.serviceWorker) return;
 
+  navigator.serviceWorker.register('/js/sw.js').then(function() {
+    console.log('Registration worked!');
+  }).catch(function() {
+    console.log('Registration failed!');
+  });
+};
 /**
  * Set neighborhoods HTML.
  */
