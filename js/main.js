@@ -153,7 +153,7 @@ createRestaurantHTML = (restaurant) => {
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
   li.append(image);
 
-
+//Create restaurant information box
   const div = document.createElement('div');
   div.className = 'restaurant-information`';
   li.append(div);

@@ -5,13 +5,9 @@ var allCaches = [
   photoCache
 ];
 
-self.addEventListener('fetch', function(event){
-  console.log(event.request);
-});
-
-self.addEventListener('install', (event) => {
+self.addEventListener('install', function(event) {
     event.waitUntil(
-      caches.open(staticCache).then((cache) => {
+      caches.open(staticCache).then(function(cache) {
         return cache.addAll([
           '/',
           'js/main.js',
@@ -19,7 +15,7 @@ self.addEventListener('install', (event) => {
           'css/main.css',
           'css/responsive.css',
           'restaurant.html',
-        ]).catch(error => {
+        ]).catch(function(error) {
           console.log(error);
         });
       })

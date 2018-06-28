@@ -247,6 +247,7 @@ nav h1 a {
     justify-content: center;
 }
 
+/* Make View Deatails button A11y*/
 #restaurants-list li button:hover,
 #restaurants-list li button:focus {
     background: rgb(241, 25, 25);
