@@ -35,8 +35,9 @@ a {
 
 a:hover,
 a:focus {
-    color: #3397db;
+    background: rgb(241, 25, 25);
     text-decoration: none;
+    box-shadow: #ccc;
 }
 
 a img {
@@ -232,7 +233,7 @@ nav h1 a {
     font-size: 11pt;
 }
 
-#restaurants-list li a {
+#restaurants-list li button {
     background-color: black;
     border-bottom: 3px solid #eee;
     color: #fff;
@@ -244,6 +245,13 @@ nav h1 a {
     text-decoration: none;
     text-transform: uppercase;
     justify-content: center;
+}
+
+#restaurants-list li button:hover,
+#restaurants-list li button:focus {
+    background: rgb(241, 25, 25);
+    text-decoration: none;
+    box-shadow: #ccc;
 }
 
 /* ====================== Restaurant Details ====================== */
