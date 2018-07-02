@@ -4,7 +4,9 @@ var allCaches = [
   staticCache,
   photoCache
 ];
-
+//self.addEventListener('fetch', function(event) {
+//  console.log(event.request);
+//});
 self.addEventListener('install', function(event) {
     event.waitUntil(
       caches.open(staticCache).then(function(cache) {
@@ -40,7 +42,7 @@ self.addEventListener('install', function(event) {
 
   self.addEventListener('fetch', function(event) {
     var requestUrl = new URL(event.request.url);
-    console.log('WHAT WHAT');
+    //console.log('WHAT WHAT');
 
     if (requestUrl.origin === location.origin) {
       if (requestUrl.pathname.startsWith('/img/')) {

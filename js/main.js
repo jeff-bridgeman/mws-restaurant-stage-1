@@ -10,7 +10,7 @@ var markers = []
 document.addEventListener('DOMContentLoaded', (event) => {
   fetchNeighborhoods();
   fetchCuisines();
-  //registerServiceWorker();
+  registerServiceWorker();
 });
 
 /**
@@ -29,8 +29,14 @@ fetchNeighborhoods = () => {
 registerServiceWorker = () => {
   if (!navigator.serviceWorker) return;
 
-  navigator.serviceWorker.register('/js/sw.js').then(() => {
-    console.log('Registration worked!');
+  navigator.serviceWorker.register('/sw.js',{scope:'/'}).then(function(reg) {
+    if(reg.installing) {
+      console.log('Service worker installing');
+    } else if(reg.waiting) {
+      console.log('Service worker installed');
+    } else if(reg.active) {
+      console.log('Service worker active');
+    }
   }).catch(function() {
     console.log('Registration failed!');
   });
@@ -149,7 +155,7 @@ createRestaurantHTML = (restaurant) => {
 
   const image = document.createElement('img');
   image.className = 'restaurant-img';
-  image.alt = restaurant.name;
+  image.alt = 'Image of ' + restaurant.name + 'restaurant.';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
   li.append(image);
 
