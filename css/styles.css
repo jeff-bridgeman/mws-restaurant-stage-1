@@ -112,7 +112,7 @@ nav h1 a {
     background-color: #eee;
     font-size: 17px;
     margin: 0;
-    min-width: 100%;
+
 }
 
 /* Display list items side by side */
@@ -257,17 +257,17 @@ nav h1 a {
 
 /* ====================== Restaurant Details ====================== */
 
-/*.inside header {
+.inside header {
     position: fixed;
     top: 0;
-    width: 100%;
+    min-width: 100%;
     z-index: 1000;
 }
 
 .inside #map-container {
     background: blue none repeat scroll 0 0;
     height: 87%;
-    width: 100%;
+    min-width: 100%;
 }
 
 .inside #map {
@@ -281,8 +281,8 @@ nav h1 a {
     position: absolute;
     width: 100%;
 }
-*/
-#restaurant-name {
+
+.inside #restaurant-name {
     color: #f18200;
     font-family: Arial, sans-serif;
     font-size: 20pt;
@@ -291,6 +291,7 @@ nav h1 a {
     margin: 15px 0 30px;
     text-transform: uppercase;
     line-height: 1.1em;
+    max-width: 1200px;
 }
 
 #restaurant-img {
