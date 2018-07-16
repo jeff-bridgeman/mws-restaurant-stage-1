@@ -17,7 +17,10 @@ window.initMap = () => {
       fillBreadcrumb();
       DBHelper.mapMarkerForRestaurant(self.restaurant, self.map);
     }
+    const name = document.getElementById('map-container');
+  name.setAttribute('aria-label',restaurant.name);
   });
+
 }
 
 /**
