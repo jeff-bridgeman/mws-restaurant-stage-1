@@ -4,19 +4,20 @@ var allCaches = [
   staticCache,
   photoCache
 ];
-//self.addEventListener('fetch', function(event) {
-//  console.log(event.request);
-//});
+
 self.addEventListener('install', function(event) {
     event.waitUntil(
       caches.open(staticCache).then(function(cache) {
         return cache.addAll([
           '/',
-          'js/main.js',
-          'js/dbhelper.js',
-          'css/main.css',
-          'css/responsive.css',
-          'restaurant.html',
+          '/index.html',
+          '/restaurant.html',
+          '/js/',
+          '/js/main.js',
+          '/js/dbhelper.js',
+          '/js/restaurant_info.js',
+          '/css/styles.css',
+          '/css/responsive.css'
         ]).catch(function(error) {
           console.log(error);
         });
@@ -42,10 +43,8 @@ self.addEventListener('install', function(event) {
 
   self.addEventListener('fetch', function(event) {
     var requestUrl = new URL(event.request.url);
-    //console.log('WHAT WHAT');
-
-    if (requestUrl.origin === location.origin) {
-      if (requestUrl.pathname.startsWith('/img/')) {
+     if (requestUrl.origin === location.origin) {
+      if (requestUrl.pathname.startsWith('/img')) {
         event.respondWith(servePhoto(event.request));
         return;
       }

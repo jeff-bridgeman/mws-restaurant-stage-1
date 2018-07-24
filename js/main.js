@@ -29,7 +29,7 @@ fetchNeighborhoods = () => {
 registerServiceWorker = () => {
   if (!navigator.serviceWorker) return;
 
-  navigator.serviceWorker.register('/sw.js',{scope:'/'}).then(function(reg) {
+  navigator.serviceWorker.register('/sw.js').then(function(reg) {
     if(reg.installing) {
       console.log('Service worker installing');
     } else if(reg.waiting) {
