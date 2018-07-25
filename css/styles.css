@@ -88,8 +88,8 @@ section {
 /* ====================== Navigation ====================== */
 
 nav {
-    width: 100%;
-    height: 80px;
+    max-width: 1200px;
+    height: 40px;
     background-color: #252831;
     text-align: center;
 }
@@ -107,10 +107,10 @@ nav h1 a {
 }
 
 #breadcrumb {
-    padding: 10px 40px 16px;
+    padding: 10px 30px 16px;
     list-style: none;
     background-color: #eee;
-    font-size: 17px;
+    font-size: 12px;
     margin: 0;
     display: flex;
     flex-wrap: wrap;
