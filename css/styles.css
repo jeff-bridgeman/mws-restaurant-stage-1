@@ -26,6 +26,7 @@ li {
     font-size: 1.0em;
     color: #333;
     padding: 1em 1em 1em 1em;
+    max-width: 1200px;
 }
 
 a {
@@ -117,7 +118,11 @@ nav h1 a {
     flex-direction: row;
 
 }
-
+#breadcrumb ul {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+  }
 /* Display list items side by side */
 
 #breadcrumb li {
